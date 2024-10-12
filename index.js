@@ -23,7 +23,7 @@ const socketToRooms = new Map();
 
 const app = express();
 const httpServer = createServer(app);
-app.use(cors())
+app.use(cors(corOption))
 const io = new Server(httpServer, {
   cors: {
     origin:
