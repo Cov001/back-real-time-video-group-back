@@ -12,7 +12,7 @@ const {
 
 dotenv.config();
 const corOption = {
-  origin: "*"
+  origin: "https://video-confe-server.vercel.app"
 }
 
 const port = process.env.PORT || 5000;
@@ -26,9 +26,7 @@ const httpServer = createServer(app);
 app.use(cors(corOption))
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.NODE_ENV === "production"
-    ? "https://back-real-time-video-group-front.vercel.app"
-    : "http://localhost:3000", // Development
+    origin: "https://video-confe-server.vercel.app"
         
   },
 });
