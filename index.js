@@ -26,10 +26,10 @@ const httpServer = createServer(app);
 app.use(cors(corOption))
 const io = new Server(httpServer, {
   cors: {
-    origin:
-      process.env.NODE_ENV === "production"
-        ? "https://back-real-time-video-group-front.vercel.app"
-        : "http://localhost:3000",
+    origin: process.env.NODE_ENV === "production"
+    ? "https://back-real-time-video-group-front.vercel.app"
+    : "http://localhost:3000", // Development
+        
   },
 });
 
