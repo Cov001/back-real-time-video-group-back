@@ -11,6 +11,9 @@ const {
 } = require("./utils/RoomHandler");
 
 dotenv.config();
+const corOption = {
+  origin: "*"
+}
 
 const port = process.env.PORT || 5000;
 
