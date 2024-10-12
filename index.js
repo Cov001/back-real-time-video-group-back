@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
+const cors = require("cors");
 const {
   addMember,
   initialUpdate,
@@ -19,6 +20,7 @@ const socketToRooms = new Map();
 
 const app = express();
 const httpServer = createServer(app);
+app.use(cors())
 const io = new Server(httpServer, {
   cors: {
     origin:
