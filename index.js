@@ -11,9 +11,7 @@ const {
 } = require("./utils/RoomHandler");
 
 dotenv.config();
-const corOption = {
-  origin: "https://back-real-time-video-group-front.vercel.app"
-}
+
 
 const port = process.env.PORT || 5000;
 
@@ -23,7 +21,9 @@ const socketToRooms = new Map();
 
 const app = express();
 const httpServer = createServer(app);
-app.use(cors(corOption))
+app.use(cors({
+  origin: "*"
+}));
 const io = new Server(httpServer, {
   cors: {
     origin: "https://back-real-time-video-group-front.vercel.app"
