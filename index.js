@@ -12,7 +12,7 @@ const {
 
 dotenv.config();
 const corOption = {
-  origin: "https://back-real-time-video-group-front.vercel.app/"
+  origin: "https://back-real-time-video-group-front.vercel.app"
 }
 
 const port = process.env.PORT || 5000;
@@ -26,7 +26,7 @@ const httpServer = createServer(app);
 app.use(cors(corOption))
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://back-real-time-video-group-front.vercel.app/"
+    origin: "https://back-real-time-video-group-front.vercel.app"
         
   },
 });
